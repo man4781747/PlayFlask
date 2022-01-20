@@ -50,8 +50,22 @@
         <div class="card card-outline card-success" style='margin: 1.25rem;'>
             <div class="card-header">
                 <h1 class='card-title' style="font-size: 3rem;font-weight: bolder;">抽獎歷程</h1>
-                <div class="card-tools">
-                    <button type="button" class="btn btn-block btn-outline-primary" style="height: 3.5rem;"
+                <div class="card-tools" style="display: flex;align-items: flex-end;">
+                    <button type="button" class="btn btn-block btn-outline-primary" style="height: 3.5rem;margin-left: 10px;"
+                        v-if="settingWindowOpen==false"
+                        @click="settingWindowOpen=true"
+                    >變更</button>
+                    <button type="button" class="btn btn-block btn-outline-primary" style="height: 3.5rem;margin-left: 10px;"
+                        v-if="settingWindowOpen==true"
+                        @click="setBox(0)"
+                    >數據經營部</button>
+                    <button type="button" class="btn btn-block btn-outline-primary" style="height: 3.5rem;margin-left: 10px;"
+                    v-if="settingWindowOpen==true" @click="setBox(1)"
+                    >資料治理辦公室</button>
+                    <button type="button" class="btn btn-block btn-outline-primary" style="height: 3.5rem;margin-left: 10px;"
+                    v-if="settingWindowOpen==true" @click="setBox(2)"
+                    >所有</button>
+                    <button type="button" class="btn btn-block btn-outline-primary" style="height: 3.5rem;margin-left: 10px;"
                         @click="rebuildBoxList()"
                     >重設</button>
                 </div>

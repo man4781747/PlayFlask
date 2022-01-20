@@ -67,45 +67,69 @@
                             <div class="col-md-6" style='margin-bottom: 10px;'>
                                 <div class="row justify-content-center" style="margin-bottom: 10px;">
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==0)?'background-color:var(--bs-blue)':'':(AnsList[0].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;'
                                         @click="ansChoseClick(0)"
-                                        >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[0].pic"
+                                        >   
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==0)?'background-color:var(--bs-blue)':'':(AnsList[0].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[0].name}}({{now_ans_chose[0]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[0].pic"
+                                                    >
+                                                    <h3>{{AnsList[0].name}}({{now_ans_chose[0]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==1)?'background-color:var(--bs-blue)':'':(AnsList[1].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;'
                                         @click="ansChoseClick(1)"
                                         >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[1].pic"
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==1)?'background-color:var(--bs-blue)':'':(AnsList[1].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[1].name}}({{now_ans_chose[1]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[1].pic"
+                                                    >
+                                                    <h3>{{AnsList[1].name}}({{now_ans_chose[1]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==2)?'background-color:var(--bs-blue)':'':(AnsList[2].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;'
                                         @click="ansChoseClick(2)"
                                         >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[2].pic"
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==2)?'background-color:var(--bs-blue)':'':(AnsList[2].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[2].name}}({{now_ans_chose[2]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[2].pic"
+                                                    >
+                                                    <h3>{{AnsList[2].name}}({{now_ans_chose[2]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==3)?'background-color:var(--bs-blue)':'':(AnsList[3].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;' 
                                         @click="ansChoseClick(3)"
                                         >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[3].pic"
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==3)?'background-color:var(--bs-blue)':'':(AnsList[3].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[3].name}}({{now_ans_chose[3]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[3].pic"
+                                                    >
+                                                    <h3>{{AnsList[3].name}}({{now_ans_chose[3]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -122,45 +146,69 @@
                             <div class="col-md-6" style='margin-bottom: 10px;'>
                                 <div class="row justify-content-center" style="margin-bottom: 10px;">
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==0)?'background-color:var(--bs-blue)':'':(AnsList[0].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;'
                                         @click="ansChoseClick(0)"
-                                        >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[0].pic"
+                                        >   
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==0)?'background-color:var(--bs-blue)':'':(AnsList[0].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[0].name}}({{now_ans_chose[0]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[0].pic"
+                                                    >
+                                                    <h3>{{AnsList[0].name}}({{now_ans_chose[0]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==1)?'background-color:var(--bs-blue)':'':(AnsList[1].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;'
                                         @click="ansChoseClick(1)"
                                         >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[1].pic"
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==1)?'background-color:var(--bs-blue)':'':(AnsList[1].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[1].name}}({{now_ans_chose[1]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[1].pic"
+                                                    >
+                                                    <h3>{{AnsList[1].name}}({{now_ans_chose[1]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==2)?'background-color:var(--bs-blue)':'':(AnsList[2].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;'
                                         @click="ansChoseClick(2)"
                                         >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[2].pic"
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==2)?'background-color:var(--bs-blue)':'':(AnsList[2].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[2].name}}({{now_ans_chose[2]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[2].pic"
+                                                    >
+                                                    <h3>{{AnsList[2].name}}({{now_ans_chose[2]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6" style='display: flex;justify-content: center;align-items: flex-end;'>
-                                        <div style='text-align: center;width: 100%;cursor: pointer;' :style="(show_ans=='')?(ansChose==3)?'background-color:var(--bs-blue)':'':(AnsList[3].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
+                                        <div style='text-align: center;width: 100%;cursor: pointer;' 
                                         @click="ansChoseClick(3)"
                                         >
-                                            <img style="max-width:20vw;max-height:25vh;"
-                                            :src="AnsList[3].pic"
+                                            <div class="card" style='margin: 1.25rem;'
+                                            :style="(show_ans=='')?(ansChose==3)?'background-color:var(--bs-blue)':'':(AnsList[3].name==show_ans[0])?'background-color: var(--bs-success);':'background-color: var(--bs-danger);'"
                                             >
-                                            <h3>{{AnsList[3].name}}({{now_ans_chose[3]}})</h3>
+                                                <div class="card-body">
+                                                    <img style="max-width:20vw;max-height:25vh;"
+                                                    :src="AnsList[3].pic"
+                                                    >
+                                                    <h3>{{AnsList[3].name}}({{now_ans_chose[3]}})</h3>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
