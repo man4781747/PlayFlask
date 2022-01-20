@@ -50,8 +50,8 @@
                 <div class="row" >
                     <div class="col-md-6" v-if="NowPeopleInfo.name != undefined">
                         <h1>現在題目的人: {{NowPeopleInfo.name}}</h1>
-                        <img 
-                        :src="NowPeopleInfo.MainPic" width="600" height="400"
+                        <img style="max-width: 30vw;max-height: 30vh;"
+                        :src="NowPeopleInfo.MainPic"
                         >
                         <template v-for="(data,index) in NowPeopleInfo.TrueFalse">
                             <h1 v-if="data[1]==false">三真一假答案: {{data[0]}}</h1>

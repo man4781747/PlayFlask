@@ -1,5 +1,13 @@
 var looper
 
+var RandomText = [
+    "抽我 抽我!",
+    "我家貓貓最可愛!",
+    "我想中大獎",
+    "副總我愛你~",
+]
+
+
 var PeopleListDB = [
     ["資料治理辦公室" , "連婉茹 協理"],
     ["資料治理辦公室" , "許翡珊 經理"],
@@ -95,7 +103,6 @@ var Vue_main = new Vue({
 	computed: {},
   
 	methods: {
-
         changePeople(){
             this.GetIndex = generateRandomInt(this.PeopleNameList.length)
             this.PeopleCountList[this.GetIndex] += 1
@@ -104,6 +111,10 @@ var Vue_main = new Vue({
             if (this.rotate>=360){
                 this.rotate = 0
             }
+            if (this.rotate % 200 == 0) {
+                createNewPopMessage(undefined)
+            }
+
         },
         rebuildBoxList(){
             this.PeopleNameList = []
@@ -176,6 +187,21 @@ $(document).ready(function() {
   });
   socket.on('STOP', function(msg) {
     stopLooper()
+    var messageStopList = [
+        "真好~", "我也想要QQ","請客請客啦!!","我想吃牛排",
+        "恭喜~"
+    ]
+    messageStopList.push(
+        "恭喜"+Vue_main.PeopleNameList[Vue_main.GetIndex].split(' - ')[0]
+    )
+    for (var i in [...Array(20).keys()]){
+        setTimeout(( () => {
+            createNewPopMessage(
+                messageStopList[generateRandomInt(messageStopList.length)]
+            )
+        }
+        ), i*200);
+    }
   });
   socket.on('reset', function(msg) {
     resetCounter()
@@ -212,3 +238,47 @@ function SetTwo(){
     Vue_main.boxType = 1
     Vue_main.rebuildBoxList()
 }
+
+function _uuid() {
+    var d = Date.now();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+      d += performance.now(); //use high-precision timer if available
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
+function createNewPopMessage(text){
+    var uuid = _uuid()
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("popmessage-anime");
+    newDiv.id = uuid
+    let newDiv_message = document.createElement("div");
+    newDiv_message.classList.add("animate__animated");
+    if (Math.random() < .5){
+        newDiv_message.classList.add("animate__fadeInLeft");
+        newDiv_message.classList.add("dialog-border-left");
+    } else {
+        newDiv_message.classList.add("animate__fadeInRight");
+        newDiv_message.classList.add("dialog-border-rigth");
+    }
+    if (text!=undefined){
+        newDiv_message.textContent = text
+    } else {
+        newDiv_message.textContent = RandomText[generateRandomInt(RandomText.length)]
+    }
+
+    newDiv.appendChild(newDiv_message);
+    let currentDiv = document.getElementById("pop-message-area");
+    currentDiv.appendChild(newDiv);
+
+    setTimeout(( () => {
+        let divChose = document.getElementById(uuid);
+        divChose.remove()
+    }
+    ), 2999);
+}
+

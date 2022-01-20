@@ -22,9 +22,122 @@
     <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+.dialog-border-rigth {
+    right: 20px;
+    border: 5px solid #888888;
+    min-height: 65px;
+    min-width: 80px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    font-size: 1.5rem;
+    max-width: 20vw;
+    word-break: break-all;
+
+}
+.dialog-border-rigth:before {
+    border-color: transparent transparent transparent #888888;
+    border-style: solid solid solid;
+    border-width: 20px 20px 20px 20px;
+    bottom: 0px;
+    content: "";
+    height: 0px;
+    right: -40px;
+    position: absolute;
+    width: 0px;
+}
+.dialog-border-rigth:after {
+    border-color: transparent transparent transparent #fff;
+    border-style: solid solid solid solid;
+    border-width: 20px;
+    bottom: 0px;
+    content: "";
+    height: 0px;
+    right: -34px;
+    /* left: 20px; */
+    position: absolute;
+    width: 0px;
+}
+
+.dialog-border-left {
+    left: 20px;
+    border: 5px solid #888888;
+    min-height: 65px;
+    min-width: 80px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    font-size: 1.5rem;
+    max-width: 20vw;
+    word-break: break-all;
+
+}
+.dialog-border-left:before {
+    border-color: transparent #888888 transparent transparent;
+    border-style: solid solid solid;
+    border-width: 20px 20px 20px 20px;
+    bottom: 0px;
+    content: "";
+    height: 0px;
+    left: -40px;
+    position: absolute;
+    width: 0px;
+}
+.dialog-border-left:after {
+    border-color: transparent #fff transparent transparent;
+    border-style: solid solid solid solid;
+    border-width: 20px;
+    bottom: 0px;
+    content: "";
+    height: 0px;
+    left: -34px;
+    position: absolute;
+    width: 0px;
+}
+
+.popmessage-anime {
+  animation-duration: 3s;
+  animation-name: popmessage-anime-set;
+  animation-timing-function: linear;
+  position: fixed;
+    z-index: 99;
+}
+
+@keyframes popmessage-anime-set {
+    0% {
+        top: 90vh;
+        opacity: 0 !important;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 0vh;
+        opacity: 0;
+    }
+}
+    </style>
+
 </head>
 
 <body class="sidebar-mini layout-fixed" style="height: auto;background-color: #f4f6f9;">
+    <div id='pop-message-area'>
+    </div>
     <div id="app" class="wrapper">
         <div class="card" style='margin: 1.25rem;'>
             <div class="card-body" style="

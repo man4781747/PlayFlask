@@ -76,7 +76,6 @@ $(document).ready(function() {
   Vue_main.show_ans = ""
 
   socket.on('next_people', function(msg) {
-      console.log(msg)
       Vue_main.show_ans = ""
       Vue_main.NowPeopleInfo = msg
       Vue_main.ansChose = -1
